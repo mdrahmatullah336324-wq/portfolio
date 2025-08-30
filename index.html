@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Md Tahir — Portfolio</title>
+  <style>
+    :root{
+      --bg:#f7fbff;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0b73ff;
+      --shadow: 0 6px 24px rgba(15,23,42,0.06);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:#0f172a;line-height:1.5;}
+    .container{max-width:980px;margin:32px auto;padding:20px;}
+    header{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+    .avatar{
+      width:96px;height:96px;border-radius:14px;flex:0 0 96px;
+      overflow:hidden;box-shadow:var(--shadow);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:14px;}
+    .name{font-size:22px;font-weight:700;margin:0}
+    .role{color:var(--muted);margin-top:6px;font-size:14px}
+    .top-actions{margin-left:auto;display:flex;gap:8px;align-items:center}
+    .btn{border:0;padding:10px 14px;border-radius:10px;background:var(--accent);color:white;font-weight:600;cursor:pointer}
+    .btn.outline{background:transparent;color:var(--accent);border:1px solid rgba(11,115,255,0.15)}
+    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:var(--shadow);margin-bottom:18px}
+    .grid{display:grid;gap:14px}
+    .two-col{grid-template-columns: 1fr 340px;}
+    @media (max-width:860px){ .two-col{grid-template-columns:1fr} .avatar{width:72px;height:72px;flex:0 0 72px} }
+    h2{margin:0 0 10px 0;font-size:18px}
+    p.lead{color:var(--muted);margin:0}
+    .info-list{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+    .muted{color:var(--muted);font-size:13px}
+    .badge{display:inline-block;background:#eef6ff;color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
+    ul.skill-list{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+    ul.skill-list li{background:#fff8ef;border:1px solid #ffe9c7;padding:8px 10px;border-radius:8px;font-weight:600}
+    .edu-item, .exp-item{border-left:3px solid #e6eefc;padding:10px 12px;border-radius:6px;background:linear-gradient(180deg,#fff,#fbfdff)}
+    .contact-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .small{font-size:13px;color:var(--muted)}
+    footer{text-align:center;color:var(--muted);font-size:13px;margin-top:18px}
+    .print-hide{display:inline-block}
+    @media print{ .btn, .top-actions, .print-hide{display:none !important} body{background:white} .container{box-shadow:none;margin:0;padding:0} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar"><img src="photo.jpg" alt="Md Tahir" /></div>
+      <div>
+        <h1 class="name">Md Tahir</h1>
+        <div class="role">Engineer — Darbhanga, Bihar</div>
+        <div class="muted" style="margin-top:6px">Age: 20 • Open to opportunities</div>
+      </div>
+
+      <div class="top-actions print-hide">
+        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+        <button class="btn outline" onclick="window.print()">Print / Save PDF</button>
+      </div>
+    </header>
+
+    <section class="card two-col grid">
+      <div>
+        <h2>About Me</h2>
+        <p class="lead">
+          I am Tahir from Darbhanga, Bihar. My education journey:
+          Completed 10th from BSEB Patna in 2019 with 67.2%, 12th from BSEB Patna in 2021 with 64.2%, and Diploma from CBSE in 2024 with 82.2 CGPA. I am passionate about designing and eager to grow as a professional engineer.
+        </p>
+
+        <div style="margin-top:14px">
+          <h3>Skills</h3>
+          <ul class="skill-list"><li>Designing</li></ul>
+        </div>
+
+        <div style="margin-top:14px">
+          <h3>Experience</h3>
+          <div class="exp-item">
+            <strong>Hardware Line — Trainee / Technician</strong>
+            <div class="small">6 months</div>
+            <ul>
+              <li>Worked on basic hardware installation and troubleshooting</li>
+              <li>Learning tools handling, safety and customer coordination</li>
+              <li>Documented issues and fixes for faster turnaround</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <div>
+            <div class="muted">Contact</div>
+            <div class="small"><strong>Mobile:</strong> <a href="tel:+917277851346">72778-51346</a></div>
+            <div class="small"><strong>Email:</strong> <a href="mailto:mdtahir051083@gmail.com">mdtahir051083@gmail.com</a></div>
+            <div class="small"><strong>Location:</strong> Darbhanga, Bihar</div>
+          </div>
+          <hr/>
+          <div>
+            <div class="muted">Education</div>
+            <div class="edu-item"><strong>Diploma (CBSE)</strong> — 2024 • CGPA: 82.2</div>
+            <div class="edu-item"><strong>12th (BSEB Patna)</strong> — 2021 • 64.2%</div>
+            <div class="edu-item"><strong>10th (BSEB Patna)</strong> — 2019 • 67.2%</div>
+          </div>
+        </div>
+
+        <div class="card" id="contact">
+          <h3>Get in touch</h3>
+          <div class="contact-row">
+            <div><div class="small">Email</div><a href="mailto:mdtahir051083@gmail.com">mdtahir051083@gmail.com</a></div>
+            <div><div class="small">Phone</div><a href="tel:+917277851346">72778-51346</a></div>
+          </div>
+          <form onsubmit="event.preventDefault();alert('Thank you! Message demo only.');" style="margin-top:10px;display:grid;gap:8px">
+            <input type="text" placeholder="Your name" required />
+            <input type="email" placeholder="Your email" required />
+            <textarea rows="4" placeholder="Message" required></textarea>
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <footer>© <span id="year"></span> Md Tahir • Built with HTML & CSS</footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
